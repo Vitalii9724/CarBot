@@ -1,0 +1,12 @@
+# nixpacks.toml
+
+# Вказуємо, що для збірки потрібен інструментарій .NET 8
+providers = ["dotnet_8"]
+
+[phases.build]
+# Тепер ця команда буде виконуватися в середовищі .NET 8
+cmds = ["dotnet publish CarInsuranceSaleBot.sln -c Release -o out"]
+
+[start]
+# Запускаємо готову програму
+cmd = "dotnet out/TestCarBot.dll"
