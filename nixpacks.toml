@@ -5,7 +5,7 @@ nixPkgs = ["dotnet-sdk_8"]
 
 [phases.build]
 # Тепер .sln лежить у корені, тому шлях не потрібен
-cmds = ["dotnet publish CarInsuranceSaleBot.sln -c Release -o out"]
+cmds = ["dotnet publish TestCarBot.sln -c Release -o out"]
 
 [start]
 cmd = "dotnet out/TestCarBot.dll"
