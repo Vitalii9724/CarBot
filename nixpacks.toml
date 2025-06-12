@@ -1,10 +1,10 @@
 # nixpacks.toml
 
-# Вказуємо версію .NET SDK
 [phases.setup]
 nixPkgs = ["dotnet-sdk_8"]
 
 [phases.build]
+# Тепер .sln лежить у корені, тому шлях не потрібен
 cmds = ["dotnet publish CarInsuranceSaleBot.sln -c Release -o out"]
 
 [start]
