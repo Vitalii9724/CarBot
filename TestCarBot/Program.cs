@@ -31,8 +31,7 @@ services.AddSingleton<OpenAiService>();
 services.AddScoped<OcrService>();
 
 services.AddDbContext<AppDbContext>(options =>
-    options.UseSqlServer(configuration.GetConnectionString("DefaultConnection"),
-        sql => sql.EnableRetryOnFailure()));
+    options.UseNpgsql(configuration.GetConnectionString("DefaultConnection")));
 
 var serviceProvider = services.BuildServiceProvider();
 
