@@ -35,11 +35,7 @@ services.AddDbContext<AppDbContext>(options =>
 
 var serviceProvider = services.BuildServiceProvider();
 
-using (var scope = serviceProvider.CreateScope())
-{
-    var dbContext = scope.ServiceProvider.GetRequiredService<AppDbContext>();
-    await dbContext.Database.MigrateAsync();
-}
+
 
 var bot = serviceProvider.GetRequiredService<BotService>();
 await bot.StartAsync();
